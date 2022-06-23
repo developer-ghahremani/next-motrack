@@ -1,0 +1,7 @@
+{
+  "required": "{{fieldName}} الزامی است.",
+  "minLength": "{{fieldName}} باید حداقل {{length}} کاراکتر باشد.",
+  "maxLength": "{{fieldName}} باید حداکثر {{length}} کاراکتر باشد.",
+  "length": "{{fieldName}} باید حتما {{length}} کاراکتر باشد.",
+  "deleteWarning": "نسبت به حذف {{fieldName}} اطمینان دارید؟"
+}

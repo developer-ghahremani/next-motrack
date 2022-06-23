@@ -20,11 +20,13 @@ const Navbar = () => {
             <FoldMenuIcon
               className="cursor-pointer"
               onClick={handleToggleSidebar}
+              size={20}
             />
           ) : (
             <UnFoldMenuIcon
               className="cursor-pointer"
               onClick={handleToggleSidebar}
+              size={20}
             />
           )}
         </div>

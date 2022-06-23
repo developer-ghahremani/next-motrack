@@ -1,1 +1,15 @@
-{ "hi": "سلام", "home": "", "users": "کاربران", "addUser": "افزودن کاربر" }
+{
+  "hi": "سلام",
+  "home": "",
+  "users": "کاربران",
+  "addUser": "افزودن کاربر",
+  "fullName": "نام و نام خانوادگی",
+  "inputPlaceHolder": "{{fieldName}} را وارد کنید...",
+  "mobile": "موبایل",
+  "submit": "ثبت",
+  "firstName": "نام",
+  "lastName": "نام خانوادگی",
+  "searchBy": "جست و جو بر اساس {{fieldName}}",
+  "yes": "بله",
+  "no": "خیر"
+}
