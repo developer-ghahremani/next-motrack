@@ -15,3 +15,15 @@ html {
 .sidebar {
   @apply w-48 h-screen fixed bg-gray-dark flex flex-col justify-between px-4 border-l;
 }
+
+.subway-item::before {
+  @apply bg-primary;
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  -moz-border-radius: 7.5px;
+  -webkit-border-radius: 7.5px;
+  border-radius: 7.5px;
+  margin-left: 5px;
+}

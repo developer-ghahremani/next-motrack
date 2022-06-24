@@ -1,2 +1,2 @@
-@import url("./../fonts/vazir/font-face-FD.css");@tailwind base;@tailwind components;@tailwind utilities;html{direction:rtl;font-family:Vazir FD}.main__container{@apply md:mx-auto max-w-3xl mx-4}.sidebar{@apply w-48 h-screen fixed bg-gray-dark flex flex-col justify-between px-4 border-l}
+@import url("./../fonts/vazir/font-face-FD.css");@tailwind base;@tailwind components;@tailwind utilities;html{direction:rtl;font-family:Vazir FD}.main__container{@apply md:mx-auto max-w-3xl mx-4}.sidebar{@apply w-48 h-screen fixed bg-gray-dark flex flex-col justify-between px-4 border-l}.subway-item::before{@apply bg-primary;content:"";display:inline-block;width:10px;height:10px;border-radius:7.5px;margin-left:5px}
 /*# sourceMappingURL=main.min.css.map */
