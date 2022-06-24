@@ -1,3 +1,5 @@
+import * as packageJSON from "./../../../../package.json";
+
 import { useAppDispatch, useAppSelector } from "store";
 
 import { CloseIcon } from "components/icons";
@@ -6,19 +8,18 @@ import Menu from "./Menu";
 import React from "react";
 import { pageNames } from "constant";
 import { toggleSiderBar } from "store/modals";
+import { useI18Next } from "i18n";
 
 const Sidebar = () => {
   const { sidebar } = useAppSelector((s) => s.modals);
   const dispatch = useAppDispatch();
+  const { t } = useI18Next();
   const handleToggleMenu = () => {
     dispatch(toggleSiderBar());
   };
 
   return (
-    <div
-      className={`sidebar animate__animated ${
-        sidebar ? "block" : "animate__fadeOutRight hidden"
-      }`}>
+    <div className={`sidebar ${sidebar ? "block" : "!hidden"}`}>
       <div className="flex flex-col">
         <CloseIcon
           className="my-4 cursor-pointer"
@@ -36,7 +37,11 @@ const Sidebar = () => {
         </Link>
       </div>
       <Menu />
-      <div></div>
+      <div>
+        <p className="text-center text-sm text-yellow-500">
+          {t("general.version", { version: packageJSON.version })}
+        </p>
+      </div>
     </div>
   );
 };

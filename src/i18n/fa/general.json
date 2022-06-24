@@ -11,5 +11,6 @@
   "lastName": "نام خانوادگی",
   "searchBy": "جست و جو بر اساس {{fieldName}}",
   "yes": "بله",
-  "no": "خیر"
+  "no": "خیر",
+  "version": "ورژن {{version}}"
 }
