@@ -1,19 +1,21 @@
 import { DeleteIcon, HeartIcon } from "components/icons";
 import { IInput, ITable } from "components/general";
 import React, { useState } from "react";
+import { useAppDispatch, useAppSelector } from "store";
 import { useDeleteUserMutation, useGetUsersQuery } from "store/service/user";
 
 import { ILoading } from "components";
-import Popup from "reactjs-popup";
+import UserModel from "models/User.model";
 import { stringifyUrl } from "query-string";
+import { toggleFavoritedUser } from "store/favoritedUser";
 import { toggleWarningModal } from "store/modals";
-import { useAppDispatch } from "store";
 import { useI18Next } from "i18n";
 import { useRouter } from "next/router";
 
 const Users = () => {
   const [searchPhrase, setSearchPhrase] = useState<string>("");
   const dispatch = useAppDispatch();
+  const favoritedUser = useAppSelector((s) => s.favoritedUser);
   const { query, push, pathname } = useRouter();
   const { page = "1" } = query;
   const { t } = useI18Next();
@@ -51,18 +53,22 @@ const Users = () => {
     setSearchPhrase(search);
   };
 
+  const toggleFavorite = (user: UserModel) => {
+    dispatch(toggleFavoritedUser(user));
+  };
+
   if (isFetching) return <ILoading />;
   if (!data) return <p>error</p>;
   return (
     <div>
-      <div className="md:flex-row flex flex-col items-center justify-between mb-16">
-        <p className="text-lg font-bold">{t("general.users")}</p>
+      <div className="md:flex-row flex flex-col items-center justify-between mb-12">
+        <p className="text-lg font-bold">{t("general.usersList")}</p>
         <IInput
           onChange={(e) => hadeSearch(e.target.value)}
           placeholder={t("general.searchBy", {
             fieldName: t("general.firstName"),
           })}
-          className="w-[20rem]"
+          className="!w-[20rem]"
           value={searchPhrase}
         />
       </div>
@@ -75,7 +81,7 @@ const Users = () => {
                 .startsWith(searchPhrase.toLowerCase())
             : true
         )}
-        headerClassName="text-red-600 text-center"
+        headerClassName="text-primary text-center"
         columns={[
           {
             fieldName: "firstName",
@@ -93,16 +99,21 @@ const Users = () => {
               <div className="flex justify-end">
                 <DeleteIcon
                   size={22}
-                  className="bg-opacity-10 text-red-600 bg-red-600 border rounded-lg cursor-pointer"
+                  className="text-primary cursor-pointer"
                   onClick={() =>
                     warningDelete(data.firstName + " " + data.lastName, data.id)
                   }
                 />
                 <p className="mx-2"></p>
                 <HeartIcon
-                  filled={false}
+                  filled={favoritedUser.user?.id === data.id}
                   size={22}
-                  className="bg-opacity-10 text-red-600 bg-red-600 border rounded-lg cursor-pointer"
+                  className={`text-secondary cursor-pointer ${
+                    favoritedUser.user?.id === data.id
+                      ? "animate__animated animate__bounceIn"
+                      : ""
+                  }`}
+                  onClick={() => toggleFavorite(data)}
                 />
               </div>
             ),

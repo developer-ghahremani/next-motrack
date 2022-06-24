@@ -74,7 +74,7 @@ const AddUser = () => {
         onSubmit={handleFinish}>
         {({ values, handleChange, errors, touched, handleSubmit }) => (
           <form autoComplete="off" onSubmit={handleSubmit}>
-            <div className="md:grid-cols-2 grid w-full grid-cols-1 gap-4 p-4 border">
+            <div className="md:grid-cols-2 grid w-full grid-cols-1 gap-2 p-4 border">
               <IInput
                 name="first_name"
                 value={values.first_name}
@@ -105,7 +105,6 @@ const AddUser = () => {
                 })}
                 label={t("general.mobile")}
               />
-
               <IButton
                 className="col-span-full  px-12 py-1"
                 loading={isLoading}

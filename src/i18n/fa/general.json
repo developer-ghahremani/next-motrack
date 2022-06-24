@@ -1,5 +1,5 @@
 {
-  "hi": "سلام",
+  "hi": "سلام {{name}}",
   "home": "",
   "users": "کاربران",
   "addUser": "افزودن کاربر",
@@ -12,5 +12,7 @@
   "searchBy": "جست و جو بر اساس {{fieldName}}",
   "yes": "بله",
   "no": "خیر",
-  "version": "ورژن {{version}}"
+  "version": "ورژن {{version}}",
+  "usersList": "لیست کاربران",
+  "guest": "مهمان"
 }

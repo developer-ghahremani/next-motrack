@@ -13,5 +13,5 @@ html {
 }
 
 .sidebar {
-  @apply w-48 h-screen fixed bg-gray-500 flex flex-col justify-between px-4;
+  @apply w-48 h-screen fixed bg-gray-dark flex flex-col justify-between px-4 border-l;
 }

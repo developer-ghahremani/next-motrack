@@ -33,7 +33,7 @@ const Pagination = (props: Props) => {
             key={item}
             onClick={() => handleChange(item)}
             className={`w-8 h-8 flex justify-center items-center mx-2 rounded-lg cursor-pointer ${
-              item === props.page ? "bg-blue-400 text-white shadow-2xl" : ""
+              item === props.page ? "bg-primary text-white shadow-2xl" : ""
             }`}>
             <p className={`text-lg`}>{item}</p>
           </div>

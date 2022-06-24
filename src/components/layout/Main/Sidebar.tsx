@@ -1,11 +1,10 @@
-import * as packageJSON from "./../../../../package.json";
-
 import { useAppDispatch, useAppSelector } from "store";
 
 import { CloseIcon } from "components/icons";
 import Link from "next/link";
 import Menu from "./Menu";
 import React from "react";
+import packageJSON from "./../../../../package.json";
 import { pageNames } from "constant";
 import { toggleSiderBar } from "store/modals";
 import { useI18Next } from "i18n";

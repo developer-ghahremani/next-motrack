@@ -9,13 +9,13 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
 const IInput = ({ className, inputClassName, error, ...props }: Props) => {
   return (
     <div className={`w-full ${className}`}>
-      <p className="text-red-600">{props.label}</p>
+      <p className="text-primary">{props.label}</p>
       <input
         type="text"
-        className={`border mt-3 py-1 px-2 outline-none w-full ${inputClassName}`}
+        className={`border mt-2 py-1 px-2 outline-none w-full ${inputClassName}`}
         {...props}
       />
-      {error && <p className="text-xs font-bold text-red-600">{error}</p>}
+      {error && <p className="text-xs font-bold text-secondary">{error}</p>}
     </div>
   );
 };

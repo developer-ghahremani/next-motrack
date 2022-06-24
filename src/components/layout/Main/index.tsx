@@ -9,7 +9,7 @@ const MainLayout = (props: Props) => {
   return (
     <div>
       <Sidebar />
-      <div className="w-full">
+      <div>
         <Navbar />
         <div className="main__container min-h-screen pt-16">
           {typeof props.pageHeader === "string" ? (

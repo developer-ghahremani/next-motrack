@@ -33,7 +33,7 @@ const WarningModal = () => {
       modal
       open={warning.open}
       onClose={handleClose}>
-      <div className="flex flex-col items-center py-8">
+      <div className={`flex flex-col items-center py-8`}>
         <p>{warning.message}</p>
         <div className="flex justify-center mt-8">
           <IButton

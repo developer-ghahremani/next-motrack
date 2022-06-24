@@ -1,6 +1,7 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
 import { configureStore } from "@reduxjs/toolkit";
+import favoritedUser from "./favoritedUser";
 import modals from "./modals";
 import service from "./service";
 
@@ -8,6 +9,7 @@ const store = configureStore({
   reducer: {
     [modals.name]: modals.reducer,
     [service.reducerPath]: service.reducer,
+    [favoritedUser.name]: favoritedUser.reducer,
   },
 });
 
